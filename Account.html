@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account - Kokum Drinks</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h2 {
+        color: #ff7e5f;
+    }
+    p {
+        margin-top: 1rem;
+    }
+    a {
+        color: #ff7e5f;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    footer {
+        margin-top: 2rem;
+        text-align: center;
+        color: #777;
+    }
+</style>
+<body>
+    <h2>Welcome to your account!</h2>
+
+    <p>Your details will appear here after login.</p>
+    <a href="/logout">Logout</a>
+
+    <footer>
+    <p>&copy; 2024 Kokum Drinks. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const username = localStorage.getItem("username");
+        const nameElement = document.getElementById("accountName");
+
+        if (username && nameElement) {
+            nameElement.textContent = `Welcome, ${username}!`;
+        } else {
+            nameElement.textContent = "Welcome, Guest!";
+        }
+    });
+</script>
+
+</body>
+</html>
